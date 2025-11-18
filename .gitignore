@@ -1,0 +1,16 @@
+# Build artifacts
+*.aux
+*.log
+*.out
+*.toc
+*.bbl
+*.blg
+*.fls
+*.fdb_latexmk
+*.synctex.gz
+*.bcf
+*.run.xml
+
+
+# 取消下一行注释以保留某个最终 PDF（示例：docs/final.pdf）
+# !docs/final.pdf
