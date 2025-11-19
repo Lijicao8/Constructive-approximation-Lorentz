@@ -176,3 +176,20 @@ p_0 \le q \le p \le \infty,
      &= (r-1)\left(\frac{N(x;x_0,\dots,x_{r-1})}{x_{r-1}-x_0} - \frac{N(x;x_1,\dots,x_{r})}{x_{r}-x_1}\right)
 \end{align*}
 根据\eqref{eq:差分运算是线性组合}，差分运算实际上是关于$f(x_k)$的线性组合.因此差分运算与求导运算可以交换顺序!除此之外$(t-x)_+^{r-1}$对于$x= t$点是$r-2$阶连续可微的.
+
+
+\paragraph{整数节点B-样条}
+特别重要的一种$B-$样条是整数节点的B-样条. 此时$M_1(x) = \mathcal{X}_I(x)$，其中$I = [0,1]$，并且$N_r = M_r: = M(x;0,\dots,r)$可以通过卷积得到：
+\begin{equation*}
+    M_r = M_{r-1}*\mathcal{X}_I =\mathcal{X}_I*\cdots *\mathcal{X}_I,
+\end{equation*}
+并且
+\begin{equation*}
+    M_r'(x) = N_r'(x) = N_r(x)-N_r(x-1).
+\end{equation*}
+
+
+
+
+
+\paragraph{样条函数随节点的变化}
