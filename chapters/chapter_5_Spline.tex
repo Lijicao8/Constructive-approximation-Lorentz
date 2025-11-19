@@ -133,3 +133,46 @@ p_0 \le q \le p \le \infty,
     M(x):=M(x;x_0,\dots,x_r):=r[x_0,\dots,x_r](\cdot -x)_+^{r-1}
 \end{equation*}
 其中的点$\{x_0,\dots,x_r\}$称为$M$的结点.
+
+根据式\eqref{eq:差分算子的Peano核}可知，对任意$f\in W_1^r$，
+\begin{equation*}
+    [x_0,\dots,x_r]f = \frac{1}{r!}\int_\infty^\infty f^{(r)}(t)M(t)\mathrm{d}t.
+\end{equation*}
+令$f(t) = t^r$，可得
+\begin{equation*}
+    \int_{-\infty}^\infty M(t)\mathrm{d}t = 1.
+\end{equation*}
+
+当$r = 1$时，
+\begin{equation*}
+    M(x;x_0,x_1) = \frac{1}{x_1-x_0}\mathcal{X}_{(x_0,x_1)}(x),\quad x\neq x_0,x_1.
+\end{equation*}
+
+
+\paragraph{B-样条性质}
+\begin{enumerate}
+    \item $M(x)>0,\quad x\in(x_0,x_r);\quad M(x) = 0,\quad x\not\in [x_0,x_r]$
+    \item $\begin{cases}
+        M(x)\sim (x-x_0)^{r-k_0},~~x\to x_0^+;\\
+        M(x)\sim (x-x_r)^{r-k_r},~~x\to x_r^-.
+    \end{cases}\qquad\text{(其中$k_0,k_r$是$x_0,x_r$的重数.)}$
+    \item $M(x)\leq C_r/(x_r-x_0),\quad x\in\mathbb{R},$
+    \item 递推公式：\begin{equation*}
+        M(x;x_0,\dots,x_r) = \frac{r}{r-1}\left[
+            \frac{x-x_0}{x_r-x_0}M(x;x_0,\dots,x_{r-1})+\frac{x_r-x}{x_r-x_0}M(x;x_1,\dots,x_r)
+        \right]
+    \end{equation*}
+\end{enumerate}
+注：递推公式 4 可以由对$(\cdot - x)_+^{r-1}=(\cdot-x)(\cdot - x)_+^{r-2}$两侧使用差分的莱布尼茨公式得到.
+
+我们得到一个$M$的变体，使得其具有更简单的递推公式，并且，其导数也是容易计算的:
+\begin{equation*}
+    N(x;x_0,\dots,x_r):=\frac{1}{r} (x_r-x_0) M(x;x_0,\dots,x_r) = (x_r-x_0)[x_0,\dots,x_r](\cdot-x)_+^{r-1}.
+\end{equation*}
+则有
+\begin{align*}
+    N(x;x_0,\dots,x_r) &= \frac{x-x_0}{x_{r-1}-x_0}N(x;x_0,\dots,x_{r-1})+\frac{x_r-x}{x_{r}-x_1}N(x;x_1,\dots,x_{r}),\\[2pt]
+    N'(x;x_0,\dots,x_r) & = -(r-1)\Big([x_1,\dots,x_r]-[x_0,\dots,x_{r-1}]\Big)(\cdot -x)_+^{r-2}\\[2pt]
+     &= (r-1)\left(\frac{N(x;x_0,\dots,x_{r-1})}{x_{r-1}-x_0} - \frac{N(x;x_1,\dots,x_{r})}{x_{r}-x_1}\right)
+\end{align*}
+根据\eqref{eq:差分运算是线性组合}，差分运算实际上是关于$f(x_k)$的线性组合.因此差分运算与求导运算可以交换顺序!除此之外$(t-x)_+^{r-1}$对于$x= t$点是$r-2$阶连续可微的.
